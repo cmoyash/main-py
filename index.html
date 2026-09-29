@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash | Web Developer</title>
+  <meta name="description" content="Yash — Web Developer from Maharashtra. Creative websites, Instagram growth (100K+ followers, 3M reach), Meta Ads and Python." />
+  <meta name="theme-color" content="#050816" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Shared gradient used by all line icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="icon-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#00cea8" />
+        <stop offset="100%" stop-color="#bf61ff" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <nav class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">Y</span>
+        <span class="logo-text">Yash <span class="logo-sub">| Web Developer</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" class="icon-menu"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg viewBox="0 0 24 24" class="icon-close"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <div class="hero-line" aria-hidden="true">
+            <span class="hero-dot"></span>
+            <span class="hero-bar"></span>
+          </div>
+
+          <div class="hero-copy">
+            <p class="hero-hello">Hello world 👋</p>
+            <h1 class="hero-title">Hi, I'm <span class="text-accent">Yash</span></h1>
+            <p class="hero-role">
+              <span class="role-static">I'm a</span>
+              <span class="role-rotator" id="role-rotator">Web Developer</span>
+            </p>
+            <p class="hero-sub">
+              I design & build <strong>stunning websites</strong>, grow Instagram pages to
+              <strong>100K+ followers</strong> and run <strong>Meta Ads</strong> that bring real results.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#contact" class="btn btn-primary">Hire Me</a>
+              <a href="#work" class="btn btn-ghost">See My Work</a>
+            </div>
+
+            <div class="hero-badges">
+              <span class="badge"><span class="badge-dot"></span> Available for projects</span>
+              <span class="badge">📍 Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simple 2D visual (no 3D) -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-top">
+              <span></span><span></span><span></span>
+              <p>yash.js</p>
+            </div>
+<pre class="code-body"><code><span class="c-key">const</span> <span class="c-var">yash</span> = {
+  <span class="c-prop">role</span>: <span class="c-str">"Web Developer"</span>,
+  <span class="c-prop">from</span>: <span class="c-str">"Maharashtra, India"</span>,
+  <span class="c-prop">skills</span>: [
+    <span class="c-str">"Web Design"</span>, <span class="c-str">"Python"</span>,
+    <span class="c-str">"Meta Ads"</span>, <span class="c-str">"Instagram"</span>
+  ],
+  <span class="c-prop">followersGrown</span>: <span class="c-str">"100K+"</span>,
+  <span class="c-prop">reach</span>: <span class="c-str">"3M"</span>,
+  <span class="c-prop">superpower</span>: <span class="c-str">"Creativity 🚀"</span>
+};</code></pre>
+          </div>
+          <div class="float-chip chip-1">🔥 100K+ Followers</div>
+          <div class="float-chip chip-2">📈 3M Reach</div>
+          <div class="float-chip chip-3">⚡ Vibe Coding</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-sub">Introduction</p>
+          <h2 class="section-head">Overview.</h2>
+        </div>
+
+        <p class="about-text reveal">
+          Myself <strong>Yash</strong>, a passionate <strong>Web Developer</strong> from <strong>Maharashtra, India</strong>.
+          I blend creativity with modern AI-powered <em>vibe coding</em> to craft websites that don't just look
+          good — they stand out. Beyond code, I'm a <strong>social media growth</strong> expert: I've grown Instagram
+          pages to <strong>100K+ followers</strong> and generated <strong>2–3 million+ reach</strong>. Add
+          <strong>Meta Ads</strong> and <strong>Python</strong> to the mix, and you get a one-stop digital partner who can
+          build your brand online <em>and</em> bring people to it.
+        </p>
+
+        <div class="service-grid">
+          <div class="service-card reveal" data-tilt>
+            <div class="service-inner">
+              <svg class="service-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <h3>Web Developer</h3>
+            </div>
+          </div>
+          <div class="service-card reveal" data-tilt>
+            <div class="service-inner">
+              <svg class="service-icon" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+              <h3>Creative Web Designer</h3>
+            </div>
+          </div>
+          <div class="service-card reveal" data-tilt>
+            <div class="service-inner">
+              <svg class="service-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <h3>Instagram Growth Expert</h3>
+            </div>
+          </div>
+          <div class="service-card reveal" data-tilt>
+            <div class="service-inner">
+              <svg class="service-icon" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+              <h3>Meta Ads Specialist</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats reveal">
+          <div class="stat">
+            <p class="stat-num"><span class="count" data-target="100">0</span>K+</p>
+            <p class="stat-label">Followers grown on Instagram</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num"><span class="count" data-target="3">0</span>M</p>
+            <p class="stat-label">Accounts reached</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num"><span class="count" data-target="4">0</span></p>
+            <p class="stat-label">Digital skills, one person</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num">∞</p>
+            <p class="stat-label">Creative ideas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-sub">What I bring to the table</p>
+          <h2 class="section-head">Skills.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <svg class="skill-icon" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+              <div>
+                <h3>Website Design & Vibe Coding</h3>
+                <p class="skill-level">Advanced</p>
+              </div>
+            </div>
+            <p class="skill-desc">
+              I turn ideas into beautiful, responsive websites using AI-powered vibe coding. My edge is
+              creativity — unique layouts, smooth animations and designs that make visitors stop scrolling.
+            </p>
+            <div class="bar"><span class="bar-fill" data-level="88"></span></div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <svg class="skill-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <div>
+                <h3>Instagram Growth</h3>
+                <p class="skill-level">Expert</p>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Grown pages up to <strong>100K+ followers</strong> and <strong>2–3 million reach</strong>. I know
+              what works — hooks, reels, trends, hashtags, posting strategy and building a loyal audience.
+            </p>
+            <div class="bar"><span class="bar-fill" data-level="92"></span></div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <svg class="skill-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              <div>
+                <h3>Meta Ads</h3>
+                <p class="skill-level">Intermediate</p>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Running Facebook & Instagram ad campaigns — audience targeting, ad creatives, budget
+              planning and optimisation to get more leads and sales for every rupee spent.
+            </p>
+            <div class="bar"><span class="bar-fill" data-level="70"></span></div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-top">
+              <svg class="skill-icon" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+              <div>
+                <h3>Python</h3>
+                <p class="skill-level">Intermediate</p>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Solid Python fundamentals — logic building, scripting and automating repetitive tasks.
+              Always learning and levelling up.
+            </p>
+            <div class="bar"><span class="bar-fill" data-level="68"></span></div>
+          </article>
+        </div>
+
+        <ul class="tech-chips reveal" aria-label="Tools and topics">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive Design</li><li>AI Vibe Coding</li>
+          <li>UI Design</li><li>Python</li><li>Meta Ads Manager</li><li>Audience Targeting</li>
+          <li>Reels Strategy</li><li>Content Planning</li><li>Instagram Growth</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WORK / JOURNEY ============ -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="reveal center">
+          <p class="section-sub">What I have done so far</p>
+          <h2 class="section-head">My Journey.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <span class="tl-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </span>
+            <div class="tl-card">
+              <p class="tl-tag">Social Media</p>
+              <h3>Instagram Growth Strategist</h3>
+              <ul>
+                <li>Grew Instagram pages from zero to <strong>100K+ followers</strong>.</li>
+                <li>Generated <strong>2–3 million+ reach</strong> with viral reels and smart content strategy.</li>
+                <li>Mastered hooks, trends, hashtags and the perfect posting schedule.</li>
+                <li>Built engaged communities — real people, not just numbers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <span class="tl-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+            </span>
+            <div class="tl-card">
+              <p class="tl-tag">Paid Marketing</p>
+              <h3>Meta Ads Specialist</h3>
+              <ul>
+                <li>Plan and run ad campaigns on Facebook & Instagram.</li>
+                <li>Audience research, targeting and scroll-stopping ad creatives.</li>
+                <li>Track results and optimise budgets for better leads and sales.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <span class="tl-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <div class="tl-card">
+              <p class="tl-tag">Development</p>
+              <h3>Web Developer & Designer</h3>
+              <ul>
+                <li>Design and build modern, fully responsive websites.</li>
+                <li>Use AI-powered vibe coding to ship high-quality sites fast.</li>
+                <li>Creative, one-of-a-kind designs: portfolios, landing pages and business sites.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <span class="tl-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            </span>
+            <div class="tl-card">
+              <p class="tl-tag">Programming</p>
+              <h3>Python Developer</h3>
+              <ul>
+                <li>Intermediate Python — logic building, scripting and problem solving.</li>
+                <li>Automating everyday tasks to save time and effort.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- DEMO testimonials: replace with real client reviews before sharing the site publicly. -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="testi-wrap">
+          <div class="testi-head reveal">
+            <p class="section-sub">What others say</p>
+            <h2 class="section-head">Testimonials.</h2>
+          </div>
+
+          <div class="testi-grid">
+            <figure class="testi-card reveal">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>
+                Yash built our website in just a few days and it looks better than sites we've seen from big
+                agencies. Super creative, quick to respond and always on time.
+              </blockquote>
+              <figcaption>
+                <div>
+                  <p class="testi-name"><span class="text-blue">@</span> Rohan P.</p>
+                  <p class="testi-role">Café Owner, Pune</p>
+                </div>
+                <span class="avatar">RP</span>
+              </figcaption>
+            </figure>
+
+            <figure class="testi-card reveal">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>
+                Our Instagram page was stuck for months. Yash's reels and content strategy completely
+                changed the game — followers, reach and enquiries all went up.
+              </blockquote>
+              <figcaption>
+                <div>
+                  <p class="testi-name"><span class="text-blue">@</span> Sneha K.</p>
+                  <p class="testi-role">Boutique Owner, Nashik</p>
+                </div>
+                <span class="avatar">SK</span>
+              </figcaption>
+            </figure>
+
+            <figure class="testi-card reveal">
+              <p class="quote-mark" aria-hidden="true">“</p>
+              <blockquote>
+                The Meta Ads campaign Yash set up brought us more leads in one month than we used to get in
+                a whole quarter. Highly recommended!
+              </blockquote>
+              <figcaption>
+                <div>
+                  <p class="testi-name"><span class="text-blue">@</span> Amit D.</p>
+                  <p class="testi-role">Fitness Coach, Mumbai</p>
+                </div>
+                <span class="avatar">AD</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <p class="section-sub">Get in touch</p>
+          <h2 class="section-head">Contact.</h2>
+
+          <form class="contact-form" id="contact-form">
+            <label>
+              <span>Your Name</span>
+              <input type="text" name="name" placeholder="What's your good name?" required />
+            </label>
+            <label>
+              <span>Your Email</span>
+              <input type="email" name="email" placeholder="What's your email address?" required />
+            </label>
+            <label>
+              <span>Your Message</span>
+              <textarea name="message" rows="6" placeholder="Tell me about your website, page or ad campaign..." required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-note" id="form-note" role="status"></p>
+          </form>
+        </div>
+
+        <div class="contact-side reveal">
+          <h3>Let's build something <span class="text-accent">awesome</span> together.</h3>
+          <p>
+            Need a website that wows, an Instagram page that grows, or ads that actually convert?
+            I'm just one message away.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Maharashtra, India</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="#" data-link="email">Email me</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              <a href="#" data-link="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Yash. Crafted with creativity ✨</p>
+      <a href="#home" class="to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
