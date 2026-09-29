@@ -1,22 +1,24 @@
 # Yash Patil — Portfolio
 
-A simple, fast personal portfolio. It has a black theme with a pink fluid glow, a pill-shaped glass navbar and a live India-time clock. Plain HTML, CSS and JavaScript, with no build step and no 3D or heavy libraries.
+A simple, fast personal portfolio in an iOS-style liquid glass look: a live pink fluid background, glass navbar with a sliding indicator, glass buttons and cards, and a live India-time clock. Plain HTML, CSS and JavaScript, with no build step and no libraries.
 
 ## Structure
 
 ```
 index.html            all sections: hero, work carousel, about, experience, skills, testimonials, contact
 css/style.css         all styles; theme colours are at the top in :root
-js/main.js            clock, active nav, carousel, animations, contact form
-assets/bg.webp        pink fluid background (desktop)
-assets/bg-mobile.webp pink fluid background (phones)
+js/main.js            clock, glass nav, live fluid background (WebGL), carousel, animations, contact form
+assets/avatar.jpg     profile photo
+assets/bg.webp        still background (shown until the live fluid starts, or if it can't run)
+assets/bg-mobile.webp still background for phones
 ```
 
 ## Quick edits
 
 - **Your links:** fill in `email`, `instagram` and `whatsapp` in the `CONFIG` block at the top of `js/main.js`. The WhatsApp, Email and Instagram buttons and the contact form start working once these are set.
-- **Your photo:** save a square photo as `assets/avatar.jpg`. It replaces the "YP" circle automatically.
-- **Colours:** change the variables in `:root` at the top of `css/style.css`.
+- **Your photo:** replace `assets/avatar.jpg` with any square photo (face in the middle).
+- **Colours and glass:** change the variables in `:root` at the top of `css/style.css` (`--scrim` controls how bright the pink background is, `--glass-*` controls the glass look).
+- **Background speed:** in `js/main.js`, change `uTime * 0.16` in the shader (higher is faster).
 - **Testimonials:** the three in `index.html` are demo placeholders. Replace them with real client reviews before sharing the site.
 
 ## Run locally

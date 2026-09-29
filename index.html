@@ -13,13 +13,24 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="bg" aria-hidden="true"></div>
+  <!-- Liquid glass refraction (used in Chromium browsers) -->
+  <svg class="svg-defs" aria-hidden="true" width="0" height="0">
+    <filter id="lg-refract" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2.5" result="soft" />
+      <feDisplacementMap in="SourceGraphic" in2="soft" scale="28" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <!-- Live pink fluid (WebGL) with a still image underneath as fallback -->
+  <div class="bg" aria-hidden="true"><canvas id="fluid"></canvas></div>
 
   <!-- ============ HEADER ============ -->
   <header class="header">
     <a href="#home" class="brand">Yash/Dev</a>
 
-    <nav class="pill-nav" aria-label="Main">
+    <nav class="pill-nav lg" aria-label="Main">
+      <span class="nav-indicator" aria-hidden="true"></span>
       <a href="#home" class="nav-item" aria-label="Home">
         <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>
       </a>
@@ -46,7 +57,14 @@
       </a>
     </nav>
 
-    <time class="clock" id="clock" aria-label="Local time in India">--:--:--</time>
+    <div class="header-right">
+      <a class="assoc lg" href="https://www.aestheriumedia.com" target="_blank" rel="noopener">
+        <span class="assoc-dot" aria-hidden="true"></span>
+        <span>Associated with <b>Aestherium</b></span>
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+      <time class="clock" id="clock" aria-label="Local time in India">--:--:--</time>
+    </div>
   </header>
 
   <!-- Page index (wide screens) -->
@@ -61,7 +79,12 @@
   <main>
     <!-- ============ HERO ============ -->
     <section class="hero wrap" id="home">
-      <a href="#work" class="badge-pill reveal">
+      <a class="assoc assoc-mobile lg reveal" href="https://www.aestheriumedia.com" target="_blank" rel="noopener">
+        <span class="assoc-dot" aria-hidden="true"></span>
+        <span>Associated with <b>Aestherium</b></span>
+        <svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+      <a href="#work" class="badge-pill lg reveal">
         <svg class="badge-icon" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
         <span>Featured work</span>
         <span class="badge-arrow"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
@@ -75,18 +98,18 @@
       </p>
 
       <div class="hero-actions reveal">
-        <a href="#about" class="btn-about">
-          <span class="mini-avatar">Y</span>
+        <a href="#about" class="btn-about lg">
+          <img class="mini-avatar" src="assets/avatar.jpg" alt="" />
           About – Yash
         </a>
-        <a href="#contact" class="btn btn-light">Let's work together</a>
+        <a href="#contact" class="btn btn-light press">Let's work together</a>
       </div>
     </section>
 
     <!-- ============ WORK (carousel) ============ -->
     <section class="work wrap-wide" id="work">
       <div class="showcase reveal" id="showcase">
-        <div class="slides" id="slides">
+        <div class="slides lg-frame" id="slides">
 
           <!-- Slide 1: Web design -->
           <article class="slide slide-web is-active"
@@ -169,7 +192,7 @@
         <h2 class="work-title" id="work-title">Premium, creative websites that make your brand look world-class.</h2>
         <div class="work-meta">
           <div class="avatars" aria-hidden="true">
-            <span>Y</span>
+            <img src="assets/avatar.jpg" alt="" />
             <span class="av-2"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
           </div>
           <p class="work-desc" id="work-desc">Fully responsive, lightning-fast sites built with HTML, CSS, JavaScript and AI-powered vibe coding, with creative details that keep visitors scrolling.</p>
@@ -184,7 +207,7 @@
     <!-- ============ ABOUT ============ -->
     <section class="about wrap-about" id="about">
       <div class="about-side reveal">
-        <div class="avatar">
+        <div class="avatar lg">
           <!-- Add your photo as assets/avatar.jpg and it shows up here automatically -->
           <img src="assets/avatar.jpg" alt="Yash Patil" onerror="this.remove()" />
           <span>YP</span>
@@ -193,11 +216,11 @@
           <span class="loc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
           Maharashtra, India
         </p>
-        <div class="langs"><span>English</span><span>Hindi</span></div>
+        <div class="langs"><span class="lg">English</span><span class="lg">Hindi</span></div>
       </div>
 
       <div class="about-main">
-        <a href="#contact" class="badge-pill reveal">
+        <a href="#contact" class="badge-pill lg reveal">
           <svg class="badge-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9.5h18M8 2.5v3.5M16 2.5v3.5"/><path d="M7.5 13.5h2M11 13.5h2M14.5 13.5h2M7.5 17h2M11 17h2"/></svg>
           <span>Schedule a call</span>
           <span class="badge-arrow"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>
@@ -207,15 +230,15 @@
         <p class="role reveal">Creative Web Developer &amp; Growth Creator</p>
 
         <div class="socials reveal">
-          <a href="#" data-link="whatsapp" class="social-btn" target="_blank" rel="noopener">
+          <a href="#" data-link="whatsapp" class="social-btn lg" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z"/></svg>
             WhatsApp
           </a>
-          <a href="#" data-link="email" class="social-btn">
+          <a href="#" data-link="email" class="social-btn lg">
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Email
           </a>
-          <a href="#" data-link="instagram" class="social-btn" target="_blank" rel="noopener">
+          <a href="#" data-link="instagram" class="social-btn lg" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>
             Instagram
           </a>
@@ -226,13 +249,14 @@
           websites, building fast with AI-powered <em>vibe coding</em> and finishing every project with a strong creative touch.
           I also know how to bring people in: I've grown Instagram pages to <strong>100K+ followers</strong> with
           <strong>2–3 million+ reach</strong>, and I run <strong>Meta Ads</strong> that convert. Add <strong>Python</strong> to the mix,
-          and you get one person who can build your brand online <em>and</em> grow it.
+          and you get one person who can build your brand online <em>and</em> grow it. Right now I work with
+          <a class="inline-link" href="https://www.aestheriumedia.com" target="_blank" rel="noopener">Aestherium</a>.
         </p>
 
         <div class="stats reveal">
-          <div class="stat"><p><span class="count" data-target="100">0</span>K+</p><span>Followers grown</span></div>
-          <div class="stat"><p><span class="count" data-target="3">0</span>M</p><span>People reached</span></div>
-          <div class="stat"><p><span class="count" data-target="4">0</span></p><span>Skills, one person</span></div>
+          <div class="stat lg"><p><span class="count" data-target="100">0</span>K+</p><span>Followers grown</span></div>
+          <div class="stat lg"><p><span class="count" data-target="3">0</span>M</p><span>People reached</span></div>
+          <div class="stat lg"><p><span class="count" data-target="4">0</span></p><span>Skills, one person</span></div>
         </div>
 
         <!-- Work experience -->
@@ -307,19 +331,19 @@
       <h2 class="h-big reveal">What clients say...</h2>
 
       <div class="testi-grid">
-        <figure class="testi reveal">
+        <figure class="testi lg reveal">
           <div class="stars" aria-label="5 out of 5">★★★★★</div>
           <blockquote>“Yash built our website in just a few days and it looks better than sites we've seen from big agencies. Super creative and always on time.”</blockquote>
           <figcaption><span class="t-av">RP</span><div><b>Rohan P.</b><span>Café Owner, Pune</span></div></figcaption>
         </figure>
 
-        <figure class="testi reveal">
+        <figure class="testi lg reveal">
           <div class="stars" aria-label="5 out of 5">★★★★★</div>
           <blockquote>“Our Instagram page was stuck for months. Yash's reels and content strategy changed the game. Followers, reach and enquiries all went up.”</blockquote>
           <figcaption><span class="t-av">SK</span><div><b>Sneha K.</b><span>Boutique Owner, Nashik</span></div></figcaption>
         </figure>
 
-        <figure class="testi reveal">
+        <figure class="testi lg reveal">
           <div class="stars" aria-label="5 out of 5">★★★★★</div>
           <blockquote>“The Meta Ads campaign Yash set up brought us more leads in one month than we used to get in a whole quarter. Highly recommended!”</blockquote>
           <figcaption><span class="t-av">AD</span><div><b>Amit D.</b><span>Fitness Coach, Mumbai</span></div></figcaption>
@@ -329,12 +353,12 @@
 
     <!-- ============ CONTACT ============ -->
     <section class="contact wrap" id="contact">
-      <div class="cta-card reveal">
+      <div class="cta-card lg reveal">
         <h2>Let's build something amazing</h2>
         <p>Need a website that wows, an Instagram page that grows or ads that actually sell? Tell me about your project and let's make it happen.</p>
         <form class="cta-form" id="contact-form">
-          <input type="text" name="message" placeholder="Tell me about your project..." aria-label="Your message" required />
-          <button type="submit">Send</button>
+          <input class="lg" type="text" name="message" placeholder="Tell me about your project..." aria-label="Your message" required />
+          <button class="press" type="submit">Send</button>
         </form>
         <p class="form-note" id="form-note" role="status"></p>
       </div>
@@ -345,9 +369,9 @@
   <footer class="footer wrap">
     <p>© <span id="year"></span> / <b>Yash Patil</b> / Crafted with creativity</p>
     <div class="footer-icons">
-      <a href="#" data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
-      <a href="#" data-link="whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
-      <a href="#" data-link="email" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+      <a class="lg" href="#" data-link="instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+      <a class="lg" href="#" data-link="whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></a>
+      <a class="lg" href="#" data-link="email" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
     </div>
   </footer>
 
