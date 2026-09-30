@@ -2,9 +2,9 @@
    YOUR LINKS — fill these in and every button updates
    ========================================================= */
 const CONFIG = {
-  email: "",      // e.g. "you@example.com"
-  instagram: "",  // e.g. "https://instagram.com/your_handle"
-  whatsapp: "",   // e.g. "919876543210" (country code + number, no + or spaces)
+  email: "",                                         // e.g. "you@example.com" (Email buttons stay hidden until set)
+  instagram: "https://www.instagram.com/yashknowsai/",
+  whatsapp: "917020824004",                          // country code + number, no + or spaces
 };
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -332,12 +332,8 @@ const linkTargets = {
 };
 document.querySelectorAll("[data-link]").forEach((a) => {
   const href = linkTargets[a.dataset.link];
-  if (href) {
-    a.href = href;
-  } else {
-    a.href = "#contact";
-    a.removeAttribute("target");
-  }
+  if (href) a.href = href;
+  else a.hidden = true; // no link set yet (e.g. email), so don't show a dead button
 });
 
 /* ---------- Contact form ---------- */

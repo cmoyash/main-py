@@ -59,6 +59,7 @@ body {
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 strong, b { font-weight: 700; color: var(--text); }
+[hidden] { display: none !important; }
 ::selection { background: var(--accent); color: #fff; }
 
 svg[viewBox="0 0 24 24"] {
@@ -918,6 +919,17 @@ svg[viewBox="0 0 24 24"] {
 }
 .cta-form button:hover { transform: translateY(-2px); }
 .form-note { margin-top: 14px; min-height: 1.4em; font-size: 15px; color: var(--pink-light); }
+.cta-direct { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.cta-direct a {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 15.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.cta-direct svg { width: 18px; height: 18px; }
 @media (max-width: 560px) {
   .cta-card { padding: 52px 20px; }
   .cta-form { flex-direction: column; }

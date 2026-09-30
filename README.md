@@ -15,7 +15,7 @@ assets/bg-mobile.webp still background for phones
 
 ## Quick edits
 
-- **Your links:** fill in `email`, `instagram` and `whatsapp` in the `CONFIG` block at the top of `js/main.js`. The WhatsApp, Email and Instagram buttons and the contact form start working once these are set.
+- **Your links:** WhatsApp and Instagram are set in the `CONFIG` block at the top of `js/main.js`. Add an `email` there to show the Email buttons too (they stay hidden until it's set).
 - **Your photo:** replace `assets/avatar.jpg` with any square photo (face in the middle).
 - **Colours and glass:** change the variables in `:root` at the top of `css/style.css` (`--scrim` controls how bright the pink background is, `--glass-*` controls the glass look).
 - **Background speed:** in `js/main.js`, change `uTime * 0.16` in the shader (higher is faster).
