@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZURA | Cliffside Residences</title>
+  <meta name="description" content="AZURA: a private collection of cliffside villas above the open sea. Explore the residences in 3D, compare prices, plan payments and book a private viewing." />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-mark">AZURA</div>
+    <div class="loader-bar"><span></span></div>
+    <p class="loader-note">Building the villa…</p>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <a href="#top" class="brand" aria-label="AZURA home"><span class="brand-dot"></span>AZURA <small>Residences</small></a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#residences">Residences</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#calculator">Payments</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="currency">
+        <span class="sr-only">Currency</span>
+        <select id="currency" aria-label="Currency">
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="INR">₹ INR</option>
+        </select>
+      </label>
+      <button class="saved-btn" id="savedBtn" type="button" aria-label="Show saved residences">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+        <span id="savedCount">0</span>
+      </button>
+      <a href="#visit" class="btn btn-light btn-sm hide-sm">Book a visit</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ 3D SCROLL STORY ============ -->
+    <section class="story" id="story" aria-label="Fly in to the villa">
+      <div class="story-stage">
+        <canvas id="world" aria-hidden="true"></canvas>
+        <div class="story-shade" aria-hidden="true"></div>
+
+        <div class="chapters">
+          <article class="chapter" data-from="0" data-to="0.13">
+            <p class="eyebrow">A private headland · 6 residences</p>
+            <h1 class="headline">Born from <em>the stone</em></h1>
+            <p class="lede">Forty metres above the open sea, a house carved into the cliff top.</p>
+          </article>
+          <article class="chapter" data-from="0.16" data-to="0.3">
+            <p class="eyebrow">01 · The headland</p>
+            <h2 class="headline">Where the land <em>runs out</em></h2>
+            <p class="lede">1.2 hectares of private coastline, with nothing between you and the horizon.</p>
+          </article>
+          <article class="chapter" data-from="0.34" data-to="0.47">
+            <p class="eyebrow">02 · The house</p>
+            <h2 class="headline">Drawn in <em>light</em></h2>
+            <p class="lede">White stone and glass, set into the cliff in three simple volumes.</p>
+          </article>
+          <article class="chapter" data-from="0.5" data-to="0.61">
+            <p class="eyebrow">03 · The pool</p>
+            <h2 class="headline">Float above <em>the sea</em></h2>
+            <p class="lede">A 25-metre infinity edge that disappears into the blue.</p>
+          </article>
+          <article class="chapter" data-from="0.65" data-to="0.79">
+            <p class="eyebrow">04 · Inside</p>
+            <h2 class="headline">Every room <em>faces the water</em></h2>
+            <p class="lede">Floor-to-ceiling glass, oak floors and quiet, warm light.</p>
+          </article>
+          <article class="chapter" data-from="0.84" data-to="1.01">
+            <p class="eyebrow">05 · Evenings</p>
+            <h2 class="headline">Painted <em>gold</em>, every night</h2>
+            <p class="lede">The sun sets straight into the bay, seen from your sofa, your bed or the pool.</p>
+            <div class="chapter-cta">
+              <a href="#residences" class="btn btn-light">Explore residences</a>
+              <a href="#visit" class="btn btn-glass">Book a private visit</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="scroll-hint" id="scrollHint" aria-hidden="true">
+          <span>Scroll to arrive</span>
+          <i></i>
+        </div>
+
+        <ol class="story-dots" id="storyDots" aria-label="Story chapters"></ol>
+        <a href="#intro" class="skip-link">Skip the intro ↓</a>
+        <div class="story-progress" aria-hidden="true"><span id="storyBar"></span></div>
+      </div>
+    </section>
+
+    <!-- ============ INTRO + NUMBERS ============ -->
+    <section class="section intro" id="intro">
+      <div class="container">
+        <p class="eyebrow reveal">The project</p>
+        <h2 class="display reveal">Designed around <em>the horizon</em>, not the plot.</h2>
+        <p class="intro-text reveal">AZURA is a small collection of residences on a limestone headland. Every room was placed by its view first, then its walls. The result is a house that feels like it has nothing in front of it but sea and sky.</p>
+        <ul class="stats">
+          <li class="reveal"><strong data-count="6">0</strong><span>Private residences</span></li>
+          <li class="reveal"><strong data-count="38" data-suffix=" m">0</strong><span>Above the sea</span></li>
+          <li class="reveal"><strong data-count="25" data-suffix=" m">0</strong><span>Infinity pool</span></li>
+          <li class="reveal"><strong data-count="1.2" data-decimals="1" data-suffix=" ha">0</strong><span>Private headland</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RESIDENCES ============ -->
+    <section class="section" id="residences">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Residences</p>
+            <h2 class="display reveal">Choose your <em>way</em> to live on the cliff.</h2>
+          </div>
+          <p class="section-note reveal">Every image here is rendered live from the 3D model of the villa.</p>
+        </div>
+
+        <div class="toolbar reveal" role="group" aria-label="Filter residences">
+          <div class="chips" id="typeChips">
+            <button type="button" class="chip is-active" data-type="all">All</button>
+            <button type="button" class="chip" data-type="villa">Villas</button>
+            <button type="button" class="chip" data-type="suite">Suites</button>
+            <button type="button" class="chip" data-type="pavilion">Pavilions</button>
+            <button type="button" class="chip" data-type="estate">Estate</button>
+          </div>
+          <div class="toolbar-right">
+            <label class="field-inline">Beds
+              <select id="bedsFilter">
+                <option value="0">Any</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="5">5+</option>
+              </select>
+            </label>
+            <label class="field-inline">Sort
+              <select id="sortBy">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="size-desc">Largest first</option>
+              </select>
+            </label>
+            <button type="button" class="chip chip-heart" id="savedOnly" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+              Saved
+            </button>
+          </div>
+        </div>
+
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <div class="cards" id="cards"></div>
+        <p class="empty" id="emptyState" hidden>No residences match these filters. <button type="button" class="link-btn" id="resetFilters">Reset filters</button></p>
+      </div>
+    </section>
+
+    <!-- ============ AMENITIES ============ -->
+    <section class="section amenities" id="amenities">
+      <div class="container">
+        <p class="eyebrow reveal">Amenities</p>
+        <h2 class="display reveal">Hotel comfort, <em>without the hotel</em>.</h2>
+        <ul class="amenity-grid">
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M7 13V5a2 2 0 0 1 4 0M13 13V5a2 2 0 0 1 4 0M7 9h6"/></svg><h3>Infinity pool</h3><p>25 m, heated all year, with a sunken lounge.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18 12h3M16.3 7.7l2.1-2.1M7 16a5 5 0 0 1 10 0M3 20h18"/></svg><h3>Sunset terraces</h3><p>West-facing decks on every level.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg><h3>Smart home</h3><p>Lighting, shades and climate from one app.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg><h3>Spa &amp; gym</h3><p>Steam room, sauna and a private studio.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M5 17h14l-1.5-6h-11zM7 17v3M17 17v3M8 11l1-4h6l1 4"/></svg><h3>Private parking</h3><p>Covered garage for three cars, with EV charging.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><h3>24/7 security</h3><p>Gated entry, cameras and an on-site team.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M4 20c4-1 6-5 6-9 2 3 6 3 10 1-1 5-5 8-10 8M10 11c0-3 1-6 4-8"/></svg><h3>Olive gardens</h3><p>Native landscaping that needs little water.</p></li>
+          <li class="reveal"><svg viewBox="0 0 24 24"><path d="M3 18h18M5 18l2-9h10l2 9M9 9V6a3 3 0 0 1 6 0v3"/></svg><h3>Concierge</h3><p>Chef, housekeeping and boat charters on request.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal">Gallery</p>
+            <h2 class="display reveal">From first light <em>to blue hour</em>.</h2>
+          </div>
+          <p class="section-note reveal">Tap any view to open it full screen. Use the arrow keys to move between images.</p>
+        </div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION ============ -->
+    <section class="section location" id="location">
+      <div class="container location-grid">
+        <div>
+          <p class="eyebrow reveal">Location</p>
+          <h2 class="display reveal">Secluded, <em>not remote</em>.</h2>
+          <p class="intro-text reveal">A quiet private road leads to the headland. The old town, the marina and the airport are all a short drive away. The exact address is shared after you book a visit.</p>
+          <ul class="distances" id="distances">
+            <li class="reveal" data-spot="beach"><span>Beach club</span><b>8 min</b></li>
+            <li class="reveal" data-spot="town"><span>Old town &amp; restaurants</span><b>12 min</b></li>
+            <li class="reveal" data-spot="marina"><span>Private marina</span><b>6 min</b></li>
+            <li class="reveal" data-spot="golf"><span>Golf course</span><b>20 min</b></li>
+            <li class="reveal" data-spot="hospital"><span>Hospital</span><b>15 min</b></li>
+            <li class="reveal" data-spot="airport"><span>International airport</span><b>40 min</b></li>
+          </ul>
+        </div>
+        <div class="map reveal" aria-label="Map showing the villa and nearby places">
+          <svg viewBox="0 0 400 400" id="mapSvg">
+            <rect width="400" height="400" fill="var(--map-sea)"/>
+            <path d="M0 0H400V170C360 160 340 200 300 205C270 210 250 260 210 255C185 252 175 300 150 300C120 300 110 250 80 240C50 230 30 260 0 250Z" fill="var(--map-land)"/>
+            <path d="M40 60C120 90 160 110 200 150S260 230 210 255" stroke="var(--map-road)" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+            <path d="M200 150C260 120 320 90 380 40" stroke="var(--map-road)" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+            <g class="map-spot" data-spot="beach"><circle cx="300" cy="206" r="6"/><text x="300" y="228">Beach</text></g>
+            <g class="map-spot" data-spot="town"><circle cx="120" cy="110" r="6"/><text x="120" y="98">Old town</text></g>
+            <g class="map-spot" data-spot="marina"><circle cx="85" cy="243" r="6"/><text x="85" y="268">Marina</text></g>
+            <g class="map-spot" data-spot="golf"><circle cx="300" cy="110" r="6"/><text x="300" y="98">Golf</text></g>
+            <g class="map-spot" data-spot="hospital"><circle cx="200" cy="60" r="6"/><text x="200" y="48">Hospital</text></g>
+            <g class="map-spot" data-spot="airport"><circle cx="370" cy="40" r="6"/><text x="350" y="68">Airport</text></g>
+            <g class="map-home"><circle cx="205" cy="250" r="16" class="pulse"/><circle cx="205" cy="250" r="8"/><text x="205" y="285">AZURA</text></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PAYMENT CALCULATOR ============ -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <p class="eyebrow reveal">Payments</p>
+        <h2 class="display reveal">Plan it <em>in a minute</em>.</h2>
+        <div class="calc reveal">
+          <form class="calc-inputs" id="calcForm" onsubmit="return false">
+            <label class="range-field">
+              <span>Property price <output id="priceOut"></output></span>
+              <input type="range" id="calcPrice" min="500000" max="12000000" step="50000" value="3400000" />
+            </label>
+            <label class="range-field">
+              <span>Down payment <output id="downOut"></output></span>
+              <input type="range" id="calcDown" min="10" max="80" step="1" value="30" />
+            </label>
+            <label class="range-field">
+              <span>Interest rate <output id="rateOut"></output></span>
+              <input type="range" id="calcRate" min="1" max="12" step="0.1" value="4.5" />
+            </label>
+            <label class="range-field">
+              <span>Loan term <output id="termOut"></output></span>
+              <input type="range" id="calcTerm" min="5" max="30" step="1" value="20" />
+            </label>
+          </form>
+          <div class="calc-result" aria-live="polite">
+            <svg viewBox="0 0 120 120" class="donut" aria-hidden="true">
+              <circle cx="60" cy="60" r="48" class="donut-bg"/>
+              <circle cx="60" cy="60" r="48" class="donut-principal" id="donutPrincipal"/>
+            </svg>
+            <div class="calc-monthly">
+              <span>Monthly payment</span>
+              <strong id="monthly">—</strong>
+            </div>
+            <dl class="calc-breakdown">
+              <div><dt><i class="key key-a"></i>Loan amount</dt><dd id="loanAmt">—</dd></div>
+              <div><dt><i class="key key-b"></i>Total interest</dt><dd id="interestAmt">—</dd></div>
+              <div><dt>Down payment</dt><dd id="downAmt">—</dd></div>
+              <div><dt>Total cost</dt><dd id="totalAmt">—</dd></div>
+            </dl>
+            <p class="fine">An estimate only, not a loan offer. Prices are shown in the currency you choose using indicative exchange rates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <p class="eyebrow reveal">FAQ</p>
+        <h2 class="display reveal">Good <em>questions</em>.</h2>
+        <div class="faq">
+          <details class="reveal"><summary>Can foreign buyers purchase a residence?</summary><p>Yes. Our team works with local lawyers who guide international buyers through every step, from reservation to handover.</p></details>
+          <details class="reveal"><summary>What does the reservation process look like?</summary><p>After a visit you can reserve with a refundable deposit. A sales contract follows within 30 days, with payments spread across construction milestones.</p></details>
+          <details class="reveal"><summary>When are the residences ready to move into?</summary><p>The Cliff Villa and The Pool Pavilion are ready now. The Sky Suite and The Garden House complete in the next construction phase.</p></details>
+          <details class="reveal"><summary>Can I change the interior finishes?</summary><p>Residences that are still under construction can choose from three interior palettes, and bespoke changes are possible on request.</p></details>
+          <details class="reveal"><summary>Is there a rental programme?</summary><p>Owners can join an optional managed rental programme. The concierge team handles guests, cleaning and maintenance.</p></details>
+          <details class="reveal"><summary>Can I visit virtually?</summary><p>Yes. Pick "Video call" as the visit type in the booking form and we will walk you through the residence live.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOK A VISIT ============ -->
+    <section class="section visit" id="visit">
+      <div class="container visit-grid">
+        <div>
+          <p class="eyebrow reveal">Private viewing</p>
+          <h2 class="display reveal">Come and <em>see the view</em>.</h2>
+          <p class="intro-text reveal">Visits are private and last about an hour. Choose a time that suits you and we will confirm within one working day.</p>
+          <ul class="contact-list reveal">
+            <li><span>Email</span><a href="#" id="contactEmail"></a></li>
+            <li><span>Phone</span><a href="#" id="contactPhone"></a></li>
+            <li><span>Office hours</span><b>Mon–Sat, 9:00–19:00</b></li>
+          </ul>
+        </div>
+
+        <form class="visit-form reveal" id="visitForm" novalidate>
+          <div class="seg" role="radiogroup" aria-label="Visit type">
+            <label><input type="radio" name="mode" value="In person" checked /><span>In person</span></label>
+            <label><input type="radio" name="mode" value="Video call" /><span>Video call</span></label>
+          </div>
+          <div class="grid-2">
+            <label class="field"><span>Full name</span><input name="name" autocomplete="name" required /><small class="err"></small></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required /><small class="err"></small></label>
+            <label class="field"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" required /><small class="err"></small></label>
+            <label class="field"><span>Residence</span><select name="residence" id="residenceSelect" required></select><small class="err"></small></label>
+            <label class="field"><span>Date</span><input name="date" type="date" id="visitDate" required /><small class="err"></small></label>
+            <label class="field"><span>Time</span>
+              <select name="time" required>
+                <option value="">Choose a time</option>
+                <option>10:00</option><option>11:30</option><option>13:00</option><option>15:00</option><option>16:30</option><option>18:00</option>
+              </select><small class="err"></small></label>
+          </div>
+          <label class="field"><span>Message (optional)</span><textarea name="message" rows="3" placeholder="Anything we should know before your visit?"></textarea></label>
+          <label class="check"><input type="checkbox" name="consent" required /><span>I agree to be contacted about this visit.</span></label>
+          <small class="err" data-for="consent"></small>
+          <button class="btn btn-light btn-block" type="submit">Request my visit</button>
+        </form>
+
+        <div class="visit-done" id="visitDone" hidden tabindex="-1">
+          <div class="done-icon" aria-hidden="true">✓</div>
+          <h3>Your visit is requested</h3>
+          <p id="visitSummary"></p>
+          <div class="done-actions">
+            <button type="button" class="btn btn-light" id="icsBtn">Add to calendar</button>
+            <button type="button" class="btn btn-glass" id="newVisit">Book another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="brand"><span class="brand-dot"></span>AZURA</a>
+        <p>Cliffside residences above the open sea.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#residences">Residences</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#calculator">Payments</a>
+        <a href="#visit">Book a visit</a>
+      </nav>
+      <form class="newsletter" id="newsletter" novalidate>
+        <label for="nlEmail">Get release news</label>
+        <div><input id="nlEmail" type="email" placeholder="you@email.com" required /><button class="btn btn-light btn-sm" type="submit">Join</button></div>
+        <small class="err" id="nlMsg" aria-live="polite"></small>
+      </form>
+    </div>
+    <p class="container footer-fine">© <span id="year"></span> AZURA Residences. A concept project: images are real-time 3D renders and all details are illustrative.</p>
+  </footer>
+
+  <!-- ============ RESIDENCE DETAIL ============ -->
+  <dialog class="modal" id="detail" aria-labelledby="detailTitle">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <div class="modal-media"><img id="detailImg" alt="" /></div>
+    <div class="modal-body">
+      <p class="eyebrow" id="detailType"></p>
+      <h3 id="detailTitle"></h3>
+      <p class="modal-price" id="detailPrice"></p>
+      <ul class="specs" id="detailSpecs"></ul>
+      <p id="detailDesc"></p>
+      <ul class="features" id="detailFeatures"></ul>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-light" id="detailBook">Book a viewing</button>
+        <button type="button" class="btn btn-glass" id="detailCalc">Calculate payments</button>
+        <button type="button" class="btn btn-glass btn-icon" id="detailSave" aria-pressed="false" aria-label="Save residence">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Gallery viewer">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" type="button" id="lbPrev" aria-label="Previous image">‹</button>
+    <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav lb-next" type="button" id="lbNext" aria-label="Next image">›</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

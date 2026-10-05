@@ -21,6 +21,10 @@ assets/bg-mobile.webp still background for phones
 - **Background speed:** in `js/main.js`, change `uTime * 0.16` in the shader (higher is faster).
 - **Testimonials:** the three in `index.html` are demo placeholders. Replace them with real client reviews before sharing the site.
 
+## 3D real estate demo
+
+`villa/` is a separate site: a cinematic 3D real estate page for a fictional cliffside villa. After deploying, it's at `/villa/`. See `villa/README.md`.
+
 ## Run locally
 
 Open `index.html` in a browser, or run:
